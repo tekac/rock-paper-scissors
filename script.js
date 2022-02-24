@@ -1,7 +1,7 @@
 const choice = ["Rock", "Paper", "Scissors"];
 const randomItem = choice[Math.floor(Math.random() * choice.length)];
 
-let playerChoice, winCount, tieCount, loseCount;
+let playerChoice;
 
 let computerPlay = () => randomItem.toLowerCase();
 let playerSelection = () =>
@@ -16,24 +16,18 @@ function playRound(playerSelection, computerSelection) {
 
   if (playerSelection == "rock") {
     if (computerSelection == "scissors") {
-      win++;
       return `${win}`;
     } else if (playerSelection == computerSelection) {
-      tie++;
       return `${tie}`;
     } else {
-      lose++;
       return `${lose}`;
     }
   } else if (playerSelection == "scissors") {
     if (computerSelection == "paper") {
-      win++;
       return `${win}`;
     } else if (playerSelection == computerSelection) {
-      tie++;
       return `${tie}`;
     } else {
-      lose++;
       return `${lose}`;
     }
   } else if (playerSelection == "paper") {
@@ -47,4 +41,8 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-console.log(playRound(playerSelection(), computerPlay()));
+function game() {
+  return playRound(playerSelection(), computerPlay());
+}
+
+console.log(game());
