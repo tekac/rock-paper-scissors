@@ -42,7 +42,10 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  return playRound(playerSelection(), computerPlay());
+  for (i = 0; i < 5; i++) {
+    console.log(i);
+    console.log(playRound(playerSelection(), computerPlay()));
+  }
 }
 
-console.log(game());
+game();
